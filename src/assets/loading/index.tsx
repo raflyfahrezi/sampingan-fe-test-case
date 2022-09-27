@@ -14,7 +14,7 @@ const Loading = () => {
                 cx='50'
                 cy='50'
                 fill='none'
-                stroke='#e5e5e5'
+                stroke='#0099e5'
                 strokeWidth='10'
                 r='35'
                 strokeDasharray='164.93361431346415 56.97787143782138'
