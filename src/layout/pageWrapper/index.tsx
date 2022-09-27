@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Head } from '@/layout'
+import { Head, Header } from '@/layout'
 
 import { PageWrapperProps } from './types'
 
@@ -8,7 +8,10 @@ const PageWrapper = ({ children }: PageWrapperProps) => {
     return (
         <>
             <Head />
-            <div>{children}</div>
+            <div>
+                <Header />
+                {children}
+            </div>
         </>
     )
 }
