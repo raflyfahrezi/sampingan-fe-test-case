@@ -1,7 +1,13 @@
 import React from 'react'
 
+import { PageWrapper } from '@/layout'
+
 const App = () => {
-    return <div>App</div>
+    return (
+        <PageWrapper>
+            <div>App</div>
+        </PageWrapper>
+    )
 }
 
 export default App
