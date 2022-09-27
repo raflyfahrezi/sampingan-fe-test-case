@@ -4,9 +4,11 @@ import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 
 import { axiosGet } from '@/utils'
+import { Loading } from '@/components'
 import { News, Comment } from '@/models'
 import { ChevronUpIcon, ChevronDownIcon } from '@/assets'
 
+import Comments from './comments'
 import {
     sCard,
     sCardTitle,
@@ -17,7 +19,7 @@ import {
 } from './styles'
 
 const Card = ({ by, url, title, time, kids }: News) => {
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(true)
     const [commentList, setCommentList] = useState<Comment[]>([])
     const [isCommentOpen, setIsCommentOpen] = useState<boolean>(false)
 
@@ -38,7 +40,7 @@ const Card = ({ by, url, title, time, kids }: News) => {
                 commentListTemp.push(data)
             }
 
-            console.log(commentListTemp)
+            setCommentList(commentListTemp)
         } catch {
             //
         } finally {
@@ -67,6 +69,17 @@ const Card = ({ by, url, title, time, kids }: News) => {
                     {title}
                 </a>
             </div>
+            {isCommentOpen && (
+                <>
+                    {isLoading ? (
+                        <div>
+                            <Loading size='small' />
+                        </div>
+                    ) : (
+                        <Comments comments={commentList} />
+                    )}
+                </>
+            )}
             <button
                 onClick={commentButtonHandler}
                 className={sCardCommentButton}

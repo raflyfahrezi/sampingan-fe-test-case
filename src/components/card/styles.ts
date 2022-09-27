@@ -7,6 +7,10 @@ export const sCard = css`
 
     border-radius: 5px;
 
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
     &:nth-child(odd) {
         background-color: #e5e5e5;
     }
@@ -34,7 +38,6 @@ export const sCardCommentButton = css`
     justify-content: right;
 
     padding: 14px 0;
-    margin-top: 20px;
 `
 
 export const sCardCommentButtonIcon = css`
