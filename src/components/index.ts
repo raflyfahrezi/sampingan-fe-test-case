@@ -1,3 +1,5 @@
+import Card from './card'
+import Loading from './loading'
 import Wrapper from './wrapper'
 
-export { Wrapper }
+export { Card, Loading, Wrapper }
