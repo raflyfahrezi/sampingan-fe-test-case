@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import ReactPaginate from 'react-paginate'
 import React, { useState, useEffect } from 'react'
 
